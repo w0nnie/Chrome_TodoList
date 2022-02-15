@@ -19,3 +19,10 @@ const player = {
 
 player.sayHello("jieun");
 player.sayHello("haha");
+
+//getElementById 의 존재이유 ... 
+const title = document.getElementById("title");
+
+
+console.log(title.className);
+title.innerText="Git Booya!";
