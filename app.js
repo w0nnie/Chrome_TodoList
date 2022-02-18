@@ -1,28 +1,23 @@
-const a = 5;
-const b = "2";
-let myName = "jinwon";
-
-//let, const의 차이 
-//const 상수 선언해준 값을 변경할 수 없다.
-//const 값을 선언하고 절대 바꾸지 않아야 할때 사용하면 될듯
-console.log(a + 2);
-console.log(a+b);
-console.log("hello "+ myName);
-
-//object와 function의 매겨변수 보내기
-const player = {
-    name:"jinwon",
-    sayHello: function (otherPersonName){
-        console.log("Hello " + otherPersonName + " nice to meet u!");
-    }
-};
-
-player.sayHello("jieun");
-player.sayHello("haha");
-
-//getElementById 의 존재이유 ... 
-const title = document.getElementById("title");
 
 
-console.log(title.className);
-title.innerText="Git Booya!";
+// #3.4 practice
+const title = document.querySelector(".hello h1");
+
+title.innerHTML ="HELLo";
+
+function titleClick(){
+    title.style.color = "blue";
+    title.innerHTML = "Click Hello";
+}
+function MouseEnter(){
+    title.style.color = "red";
+    title.innerHTML = "Mouse is here!";
+}
+function MouseLeave(){
+    title.style.color = "black";
+    title.innerHTML = "Mouse is gone!";
+}
+
+title.addEventListener("click", titleClick);
+title.addEventListener("mouseenter",MouseEnter);
+title.addEventListener("mouseleave",MouseLeave);
