@@ -15,14 +15,9 @@ function handlewindowCut(){
 function handlewindowPaste(){
     alert("paste!");
 }
-
+//#3.8 CSS in Javascript part Three  classList & toggle
 function handleh1Click(){
-    const ClassName = "clicked";
-    if(h1.className == ClassName){
-        h1.className ="";
-    }else{
-        h1.className = ClassName
-    }
+   h1.classList.toggle("clicked");
 }
 // #3.7 CSS in Javascript part Two
 h1.addEventListener("click",handleh1Click);
