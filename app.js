@@ -2,13 +2,10 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
 
-//  #4.0 Input Values
+//  #4.1 #4.1 Form Submission 
 function Click(){
-    if(loginInput.value == ""){
-        alert("Please insert your name!")
-    }else{
-        console.log("hello", loginInput.value);
-    }
+        const username = loginInput.value;
+        console.log(username);
 }
 
 loginButton.addEventListener("click",Click)
