@@ -1,8 +1,10 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
+
 const link = document.querySelector("a");
 
 // #4.3 Events part Two 
+
 function Click(){
         const username = loginInput.value;
         console.log(username);
