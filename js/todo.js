@@ -2,12 +2,21 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
-// #7.1 Adding ToDos 
-function printTodo(hi){
+// #7.2 Deleting To Dos 
+function delTodo(event){
+    const li = event.target.parentElement;
+    li.remove();
+}
+
+function printTodo(newTodo){
     const li = document.createElement("li");
     const span = document.createElement("span");
+    const button = document.createElement("button");
+    span.innerText = newTodo;
+    button.innerText = "❌";
+    button.addEventListener("click",delTodo);
     li.appendChild(span);
-    span.innerText = hi;
+    li.appendChild(button);
     toDoList.appendChild(li);
 }
 
