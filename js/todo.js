@@ -1,8 +1,8 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
-
-// #7.2 Deleting To Dos 
+const toDos = [];
+// #7.3 Saving To Dos
 function delTodo(event){
     const li = event.target.parentElement;
     li.remove();
@@ -24,6 +24,7 @@ function handleTodoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
+    toDos.push(newTodo);
     printTodo(newTodo);
 }
 toDoForm.addEventListener("submit",handleTodoSubmit);
