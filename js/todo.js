@@ -3,6 +3,10 @@ const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const toDos = [];
 // #7.3 Saving To Dos
+//merge
+function saveTodos(){
+    localStorage.setItem("todos",toDos);
+}
 function delTodo(event){
     const li = event.target.parentElement;
     li.remove();
