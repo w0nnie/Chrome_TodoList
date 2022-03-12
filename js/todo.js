@@ -43,7 +43,12 @@ toDoForm.addEventListener("submit",handleTodoSubmit);
 const savedTodos = localStorage.getItem(TODOS_KEY);
 
 if (savedTodos != null){
-    const preSaveTodos = JSON.parse(savedTodos);
-    toDos = preSaveTodos;
-    preSaveTodos.forEach(printTodo);
+    const parsedTodos = JSON.parse(savedTodos);
+    toDos = parsedTodos;
+    parsedTodos.forEach(printTodo); // forEach는 printTodo를 parsedTodos 배열의 요소마다 실행한다.
+}
+
+//filter function 은 항상 true를 리턴해야한다 (?)
+function sexyFilter(){
+
 }
