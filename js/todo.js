@@ -3,14 +3,16 @@ const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY ="todos";
 let toDos = [];
-//#7.6 Deleting To Dos part One
+//#7.8 Deleting To Dos part Three
 function saveTodos(){
     localStorage.setItem("todos",JSON.stringify(toDos));
 }
 function delTodo(event){
     const li = event.target.parentElement;
-    console.log(li.id);
     li.remove();
+    console.log(typeof li.id); //console에 찍히는 객체들의 type을 확인하기 용이할듯
+    toDos = toDos.filter((toDo) => toDo.id != parseInt(li.id));
+    saveTodos(); //지우고 다시 저장 function 호출
 }
 
 function printTodo(newTodo){
