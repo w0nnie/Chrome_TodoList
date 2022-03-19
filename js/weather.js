@@ -12,6 +12,8 @@ function onGeoOk(position){
                 const city = document.querySelector("#weather span:last-child");
                 if (data.weather[0].main == "Clear"){
                         weather.innerText = "☀" // ⛈⛅☁🌩🌨🌥🌦🌞
+                }else{
+                        weather.innerText = `${data.weather[0].main}`;
                 }
                 
                 city.innerText = `${data.name}`;
