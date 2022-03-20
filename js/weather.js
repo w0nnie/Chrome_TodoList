@@ -9,15 +9,12 @@ function onGeoOk(position){
         .then((response) => response.json())
         .then((data) => {
                 const weather = document.querySelector("#weather span:first-child");
-                const city = document.querySelector("#weather span:last-child");
-                if (data.weather[0].main == "Clear"){
-                        weather.innerText = "☀" // ⛈⛅☁🌩🌨🌥🌦🌞
-                }else{
-                        weather.innerText = `${data.weather[0].main}`;
-                }
-                
-                city.innerText = `${data.name}`;
-        });
+                const city = document.querySelector("#weather span:nth-child(2)");
+                const temp = document.querySelector("#weather span:last-child");
+                const name = data.name;
+                weather.innerText = data.weather[0].main;
+                city.innerText = data.name;
+                temp.innerText = `${Math.floor(data.main.temp)}˚C`;})
 }
 function onGeoError(){
         alert("Can't find you. No weather for you.");
